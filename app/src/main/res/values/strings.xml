@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Silly Music Player</string>
+    <string name="play_my_mood">Play My Mood</string>
+    <string name="your_mood_is">Your Mood is: </string>
+    <string name="mood_icon">Mood icon</string>
+    <string name="judging_your_mood">Judging your mood ..</string>
+</resources>
