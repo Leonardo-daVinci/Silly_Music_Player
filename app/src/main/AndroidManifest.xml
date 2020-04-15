@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="apps.nocturnuslabs.sillymusicplayer">
 
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"/>
-    <uses-feature android:name="android.hardware.camera.any"
-        android:required="true"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClassifyActivity"></activity>
+        <activity android:name=".MusicActivity"></activity>
+        <activity android:name=".ClassifyActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.soundcloud.android.crop.CropImageActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.soundcloud.android.crop.CropImageActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

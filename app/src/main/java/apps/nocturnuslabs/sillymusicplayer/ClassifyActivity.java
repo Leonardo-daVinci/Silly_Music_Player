@@ -2,12 +2,14 @@ package apps.nocturnuslabs.sillymusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -65,6 +67,7 @@ public class ClassifyActivity extends AppCompatActivity {
 
     private ImageView selectedImage;
     private TextView moodtxt;
+    public Boolean mood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,8 +135,28 @@ public class ClassifyActivity extends AppCompatActivity {
             topConfidence[i] = String.format("%.0f%%",label.getValue()*100);
         }
 
-        moodtxt.setText("You seem "+topLables[1]+" with probability of "+topConfidence[1]);
+        moodtxt.setText("You seem "+topLables[1]+" !");
+        if(topLables[1].equals("Happy")){
+            mood = Boolean.TRUE;
+            selectedImage.setImageResource(R.mipmap.ic_happy);
+        }else{
+            mood = Boolean.FALSE;
+            selectedImage.setImageResource(R.mipmap.ic_sad);
+        }
 
+        startMusicActivity(mood);
+    }
+
+    private void startMusicActivity(final Boolean mood) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                final Intent musicIntent = new Intent(ClassifyActivity.this,MusicActivity.class);
+                musicIntent.putExtra("Mood",mood);
+                ClassifyActivity.this.startActivity(musicIntent);
+                ClassifyActivity.this.finish();
+            }
+        },3000);
     }
 
     private void convertBitmaptoByteBuffer(Bitmap bitmap) {

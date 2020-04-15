@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassifyActivity">
+    tools:context=".ClassifyActivity"
+    android:background="#1F1D1E">
 
     <ImageView
         android:id="@+id/classify_imageview"
@@ -25,9 +26,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:text="@string/judging_your_mood"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/classify_imageview"
         app:layout_constraintStart_toStartOf="@+id/classify_imageview"
         app:layout_constraintTop_toBottomOf="@+id/classify_imageview" />
+
+    <TextView
+        android:id="@+id/classify_load_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loading_your_playlist"
+        android:textColor="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/classify_moodtxt"
+        app:layout_constraintStart_toStartOf="@+id/classify_moodtxt"
+        app:layout_constraintTop_toBottomOf="@+id/classify_moodtxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

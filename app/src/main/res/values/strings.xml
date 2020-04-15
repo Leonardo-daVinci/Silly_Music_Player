@@ -4,4 +4,6 @@
     <string name="your_mood_is">Your Mood is: </string>
     <string name="mood_icon">Mood icon</string>
     <string name="judging_your_mood">Judging your mood ..</string>
+    <string name="loading_your_playlist">Loading your playlist ..</string>
+    <string name="face_detected">For recognizing your mood, \n Your face will be detected</string>
 </resources>
